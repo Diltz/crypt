@@ -3,7 +3,7 @@ local decrypt = function(data,salt)
 	local finalstr = ""
 
 	for k,v in pairs(split) do
-		local origbyte = (v / salt) * 2
+		local origbyte = v * 2
 		finalstr = finalstr .. string.char(origbyte)
 	end
 	
