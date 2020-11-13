@@ -12,5 +12,5 @@ local encrypt = function(str)
 		end
 	end
 
-	return finalcrypt,salt
+	return finalcrypt,salt -- Returns encrypted string with used salt
 end
