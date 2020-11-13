@@ -5,10 +5,9 @@ Own made encrypt &amp; decrypt. Won't really be used but still cool
 
 ```lua
 local original = "WOoOoW! ThiS A sTrONG mESsAgE!!!111 n0 OnE Have A cArr0t" -- Our string to encrypt
-local encrypted,salt = encrypt(original) -- Our encrypted string with used salt
-local decrypted = decrypt(encrypted,salt) -- Our decrypted string (We must know salt when decrypt)
+local encrypted = encrypt(original) -- Our encrypted string
+local decrypted = decrypt(encrypted) -- Our decrypted string
 
-print("Encrypted ",encrypted) -- random cuz salt
-print("Salt:",salt) -- random
+print("Encrypted:",encrypted)
 print("Compared with Decrypted & Original:",decrypted == original) -- true
 ```
