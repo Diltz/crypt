@@ -1,4 +1,4 @@
-local decrypt = function(data,salt)
+local decrypt = function(data)
 	local split = string.split(data," ")
 	local finalstr = ""
 
