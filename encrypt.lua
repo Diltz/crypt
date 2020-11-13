@@ -1,10 +1,9 @@
 local encrypt = function(str)
-	local salt = math.floor(math.floor(tick()/1000) / math.random(2,6))
 	local split = string.split(str,"")
 	local finalcrypt = ""
 
 	for k,v in pairs(split) do
-		local sbyte = (v:byte() / 2) * salt
+		local sbyte = (v:byte() / 2)
 		if finalcrypt == "" then
 			finalcrypt = sbyte
 		else
@@ -12,5 +11,5 @@ local encrypt = function(str)
 		end
 	end
 
-	return finalcrypt,salt -- Returns encrypted string with used salt
+	return finalcrypt -- Returns encrypted string
 end
