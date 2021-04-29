@@ -1,15 +1,14 @@
-local encrypt = function(str)
-	local split = string.split(str,"")
-	local finalcrypt = ""
-
-	for k,v in pairs(split) do
-		local sbyte = (v:byte() / 2)
-		if finalcrypt == "" then
-			finalcrypt = sbyte
-		else
-			finalcrypt = string.format("%s %s",finalcrypt,sbyte)
-		end
+local encrypt = function(t, str)
+	local sep = t.sep or " "
+	
+	local finalstr = ""
+	for _,v in pairs(str:split("")) do
+		local sbyte = v:byte() / 2
+		finalstr = finalstr .. sbyte .. sep
 	end
+	finalstr = finalstr:sub(1, #finalstr-#sep)
 
-	return finalcrypt -- Returns encrypted string
+	return finalstr -- Returns encrypted string
 end
+
+return encrypt
