@@ -7,7 +7,7 @@ Modifiated diltz's encrypt &amp; decrypt. Won't really be used too but still coo
 local crypt = require(script.crypt)
 local orig = "kurwa :3"
 
-local encrypted = Crypt:encrypt(Orig)
+local encrypted = crypt:encrypt(orig)
 print("encrypted", encrypted)
-print("decrypt success:", Orig==Crypt:decrypt(encrypted))
+print("decrypt success:", orig==crypt:decrypt(encrypted))
 ```
